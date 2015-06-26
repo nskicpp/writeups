@@ -66,7 +66,7 @@ different domains.  Two examples of additive monoids are 𝐑≥0 and
 matrices with natural number coefficients.  (Now, does the notation
 "abc" + "def" for string concatenation make sense?  That is, do
 strings with concatenation as a binary operation model additive
-monoid?  We will see why this is not just a purity, theoretical
+monoid?  We will see why this is not just a purely theoretical
 concern and turns out to be a problem later.  What we've just seen is
 called a _concept_, which we'll discuss below.)
 
@@ -95,7 +95,7 @@ commutative, and has an identity element.  But what does that get us?
     the operation each value appears on doesn't matter.  Let's say one
     of the elements of `A` represents +∞.  In this case, the result is
     going to be +∞ (so long as we don't have -∞ or don't care about
-    in determinant results).  So if adding is expensive, it might make
+    indeterminate results).  So if adding is expensive, it might make
     sense to reorder the addition so that the infinities are at the
     front of the array: then, we check whether the accumulator is ∞,
     and if it is, we don't need to do an expensive addition.  This
@@ -198,8 +198,8 @@ C++ programs have four primary sorts of abstractions.
          or performance, this may not be a strong enough guarantee.
 
       3. A _method_ is a specific type of function where the exact
-         code that is called is determined the dynamic type of one or
-         more arguments.  In most object-oriented languages, this
+         code that is called is determined by the dynamic type of one
+         or more arguments.  In most object-oriented languages, this
          means the method call is dispatched based on type of object
          you are calling the method on.  Some languages allow you to
          dispatch based on the type of multiple objects—this is called
@@ -569,7 +569,7 @@ lives on.  Only then can we possibly reason about performance.  This
 machine model is simplified from what actual hardware is doing, and we
 sometimes will concern ourselves with that relationship as well.
 Unlike many other languages, though, C++ directly exposes us to the
-machine model.  We _can_ subvert (almost) abstraction we want.  We
+machine model.  We _can_ subvert (almost) any abstraction we want.  We
 _can_ subvert the type system.  We are able to do all of these things
 (though we usually don't want to).  Put another way, all abstractions
 in C++ are leaky.  We will see how this allows us not only to write
