@@ -496,7 +496,8 @@ vary) using the `size` member function.  This is often a better
 approach than hard-coding the size.
 
 ```cpp
-auto size = x.size(); // size is now 10
+// We'll see why this cast is necessary later.
+auto size = static_cast<int>(x.size()); // size is now 10
 ```
 
 To get an object out of an array at a specific index, you can use the
@@ -614,18 +615,20 @@ auto y = vector<string>{ "abc"s, "def"s };
 auto z = vector<double>{};
 ```
 
-There are four important operations to mutate a vector: `push_back`,
-which adds an element to the end of the vector; `pop_back`, which
-removes and returns an element from the end of the vector; `insert`,
-which inserts into any position in the array, and `erase`, which
-erases an element.  `push_back` and `pop_back` are guaranteed 𝒪(1)
-(amortized), while `insert` and `erase` are 𝒪(𝑛) (because they have to
-move all elements after them).
+There are five important operations to mutate a vector: `push_back`,
+which adds an element to the end of the vector; `front` and `back`,
+which return the elements at the beginning and end of the vector,
+respectively, `pop_back`, which removes the element from the end of
+the vector; `insert`, which inserts into any position in the array,
+and `erase`, which erases an element.  `push_back` and `pop_back` are
+guaranteed 𝒪(1) (amortized), while `insert` and `erase` are 𝒪(𝑛)
+(because they have to move all elements after them).
 
 ```cpp
 auto x = vector<int>{ 1, 2, 3, 4 };  // [ 1, 2, 3, 4 ]
 x.push_back(5);                      // [ 1, 2, 3, 4, 5 ]
-auto back = x.pop_back();            // [ 1, 2, 3, 4 ]
+auto back = x.back();
+x.pop_back();                        // [ 1, 2, 3, 4 ]
 /* This below is a little weird, but we'll see why it makes sense and
    why it's more flexible than simple indexes when we talk about the
    design of the standard library in a later lesson.  For now, accept
@@ -640,7 +643,7 @@ x.erase(begin(x) + 2, begin(x) + 4); // [ -1, -2, 2, 3, 4 ]
 As with an array, we can ask its size or request an element from it:
 
 ```cpp
-auto length         = x.size();
+auto length         = static_cast<int>(x.size());
 auto second_element = x[1];     // no bounds checking
 auto third_element  = x.at(2);  // bounds checking
 ```
