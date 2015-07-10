@@ -944,6 +944,13 @@ order we can iterate over them.  We can write our own containers, and
 they will work with a range-based `for`.  We will see how in a few
 lessons.
 
+### `break` and `continue`
+
+If you want to exit out of a loop body, you can use the `break;`
+statement.  If you want to immediately go to the next iteration of the
+loop (checking the conditional expression and, in a `for` loop,
+executing the update step), you can use the `continue;` statement.
+
 ### Loop invariants
 
 Loops are among the hardest things in software to reason about.  They
