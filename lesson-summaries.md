@@ -76,27 +76,29 @@ Unit 2 -- Building Abstractions
     look at how we can use the principle of minimizing coupling and
     maximizing cohesion to design better software.
 
-  - __10. Documentation__
+  - __10. Value Types, Equality, and Identity__
 
-  - __11. Encapsulation and Open Abstractions__
+  - __11. Documentation__
 
-  - __12. Designing Interfaces__
+  - __12. Encapsulation, Invariants, Classes, and Open Abstractions__
 
-  - __13. Designing Systems__
+  - __13. Designing Interfaces__
 
-  - __14. Case study: `iostreams`__
+  - __14. Designing Systems__
 
-  - __15. Customization Dimensions__
+  - __15. Case study: `iostreams`__
 
-  - __16. Object-Oriented Programming__
+  - __16. Customization Dimensions__
 
-  - __17. Code Formatting__
+  - __17. Object-Oriented Programming__
 
-  - __18. Functional Programming__
+  - __18. Code Formatting__
 
-  - __19. Algebraic Structures__
+  - __19. Functional Programming__
 
-  - __20. Concepts__: We will compile the latest version of GCC which
+  - __20. Algebraic Structures__
+
+  - __21. Concepts__: We will compile the latest version of GCC which
     has language support for expressing constraints.  We will look at
     the previous version of concepts, _Concepts C++0x_, which didn't
     get voted in.  We will also compare concepts with Haskell
@@ -107,4 +109,4 @@ Unit 2 -- Building Abstractions
 
   - __22. Design Patterns__
 
-  - __21. Type Erasure__
+  - __23. Type Erasure__
