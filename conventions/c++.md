@@ -99,3 +99,26 @@ template <typename IteratorT, typename PredicateT>
   bool all_of(IteratorT begin, IteratorT end, PredicateT pred);
 template <typename T, typename U> U special_cast(const T&);
 ```
+
+If you use concepts in your code, prefer to give the template
+parameter name either a simple name like `T` or a name like `KeyT`
+which gives more semantics than the concept alone.
+
+### Concepts
+
+Concept should be named in CamelCase.  Prefer nominal or adjectival
+names for concepts.  The names should be evocative of the abstraction
+they are describing.
+
+Some examples:
+
+```cpp
+template <typename T>
+concept bool Regular = requires (…) { … };
+
+template <typename T>
+concept bool Hashable = requires (…) { … };
+
+template <typename F>
+concept bool UnaryPredicate = requires (…) { … };
+```
